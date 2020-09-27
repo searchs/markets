@@ -2,7 +2,7 @@ const elasticsearch = require('elasticsearch');
 
 //instantiate Elastic client
 const client = new elasticsearch.Client({
-    hosts: ['es01:9200','es02:9200','es03:9200']
+    hosts: ['localhost:9200']
 });
 
 client.ping({
@@ -13,4 +13,15 @@ if(error) {
 }else {
     console.log("Elasticsearch is running on http://localhost:9200/");
 }
+});
+
+//create index - called shoes
+client.indices.create({
+index: 'shoes'
+}, function(error, response, status) {
+    if(error) {
+        console.log(error);
+    } else {
+        console.log("Created new index", response);
+    }
 });
