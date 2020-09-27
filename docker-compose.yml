@@ -85,5 +85,5 @@ volumes:
 networks:
   elastic:
     driver: bridge
-# Make sure Docker Engine is allotted at least 4GiB of memory. In Docker Desktop, you configure resource usage on the Advanced tab in Preference (macOS) or Settings (Windows).
-# Run docker-compose to bring up 
+
+    
